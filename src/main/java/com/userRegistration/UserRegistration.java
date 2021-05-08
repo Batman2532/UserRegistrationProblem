@@ -17,7 +17,12 @@ public class UserRegistration {
             emailValidation(sc.nextLine());
             System.out.println("Enter your mobile number");
             mobileNumberValidation(sc.nextLine());
+            System.out.println("Enter password it must be one capital letter, one special character and one number");
+            passwordValidation(sc.nextLine());
         }
+    }
+
+    private static void passwordValidation(String passowrd) {
     }
 
 
@@ -30,7 +35,7 @@ public class UserRegistration {
     }
 
     private static void emailValidation(String email) {
-        if(Pattern.matches("^[A-Za-z0-9_][A-Za-z0-9_]*[@]{1}[a-z]+[.]{1}[a-z]{2,6}$", email)){
+        if(Pattern.matches("^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$", email)){
             System.out.println("valid");
         }
         else {

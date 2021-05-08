@@ -23,7 +23,7 @@ public class UserRegistration {
     }
 
     private static void passwordValidation(String password) {
-        if(Pattern.matches("^([A-Za-z]{8,20})$",password)){
+        if(Pattern.matches("^(?=.*[A-Z])(?=.*?[0-9])[A-Za-z0-9]{8,}$",password)){
             System.out.println("valid");
         }else {
             System.out.println("Entered password is invalid");

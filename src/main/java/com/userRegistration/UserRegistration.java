@@ -22,9 +22,13 @@ public class UserRegistration {
         }
     }
 
-    private static void passwordValidation(String passowrd) {
+    private static void passwordValidation(String password) {
+        if(Pattern.matches("^[a-z]{8,20}",password)){
+            System.out.println("valid");
+        }else {
+            System.out.println("Entered password is invalid");
+        }
     }
-
 
     private static void mobileNumberValidation(String mobileNumber) {
         if(Pattern.matches("^[1-9]{1,2}[ ]{1}[1-9]{1}[0-9]{9}$", mobileNumber)){
@@ -43,7 +47,7 @@ public class UserRegistration {
         }
     }
 
-    private static final void nameValidation(String name){
+    private static void nameValidation(String name){
         if(Pattern.matches("[A-Z][a-z]{3,}", name)){
             System.out.println("valid");
         }else{

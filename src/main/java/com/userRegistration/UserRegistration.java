@@ -8,22 +8,22 @@ public class UserRegistration {
 
     public static void main(String[] args) {
         while(true) {
-//            System.out.println("Welcome to User Registration");
-//            System.out.println("Enter your First name");
-//            nameValidation(sc.nextLine());
-//            System.out.println("Enter your Last name");
-//            nameValidation(sc.nextLine());
-//            System.out.println("Enter your email address");
-//            emailValidation(sc.nextLine());
-//            System.out.println("Enter your mobile number");
-//            mobileNumberValidation(sc.nextLine());
+            System.out.println("Welcome to User Registration");
+            System.out.println("Enter your First name");
+            nameValidation(sc.nextLine());
+            System.out.println("Enter your Last name");
+            nameValidation(sc.nextLine());
+            System.out.println("Enter your email address");
+            emailValidation(sc.nextLine());
+            System.out.println("Enter your mobile number");
+            mobileNumberValidation(sc.nextLine());
             System.out.println("Enter password it must be one capital letter, one special character and one number");
             passwordValidation(sc.nextLine());
         }
     }
 
     private static void passwordValidation(String password) {
-        if(Pattern.matches("^(?=.*[A-Z])(?=.*?[0-9])[A-Za-z0-9]{8,}$",password)){
+        if(Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-d+=()])(?=\\S+$).{8,20}$",password)){
             System.out.println("valid");
         }else {
             System.out.println("Entered password is invalid");

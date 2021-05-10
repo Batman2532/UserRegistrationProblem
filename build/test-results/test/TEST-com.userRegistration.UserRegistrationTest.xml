@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.userRegistration.UserRegistrationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-05-10T09:54:03" hostname="BATMAN" time="0.06">
+  <properties/>
+  <testcase name="validateFirstName()" classname="com.userRegistration.UserRegistrationTest" time="0.034"/>
+  <testcase name="validateEmail()" classname="com.userRegistration.UserRegistrationTest" time="0.004"/>
+  <testcase name="validatePhoneNo()" classname="com.userRegistration.UserRegistrationTest" time="0.01"/>
+  <testcase name="validatePassword()" classname="com.userRegistration.UserRegistrationTest" time="0.004"/>
+  <testcase name="validateLastName()" classname="com.userRegistration.UserRegistrationTest" time="0.002"/>
+  <system-out><![CDATA[valid
+valid
+valid
+valid
+valid
+valid
+valid
+valid
+valid
+valid
+valid
+valid
+valid
+please enter a valid number
+valid
+valid
+valid
+valid
+valid
+valid
+valid
+valid
+valid
+valid
+valid
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

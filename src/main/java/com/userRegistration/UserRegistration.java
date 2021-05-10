@@ -22,36 +22,44 @@ public class UserRegistration {
         }
     }
 
-    private static void passwordValidation(String password) {
+    public static boolean passwordValidation(String password) {
         if(Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-d+=()])(?=\\S+$).{8,20}$",password)){
             System.out.println("valid");
+            return true;
         }else {
             System.out.println("Entered password is invalid");
+            return false;
         }
     }
 
-    private static void mobileNumberValidation(String mobileNumber) {
-        if(Pattern.matches("^[1-9]{1,2}[ ]{1}[1-9]{1}[0-9]{9}$", mobileNumber)){
+    public static boolean mobileNumberValidation(String mobileNumber) {
+        if(Pattern.matches("^[1-9]{1,3}[ ]{1}[1-9]{1}[0-9]{9}$", mobileNumber)){
             System.out.println("valid");
+            return true;
         }else {
             System.out.println("please enter a valid number");
+            return false;
         }
     }
 
-    private static void emailValidation(String email) {
+    public static boolean emailValidation(String email) {
         if(Pattern.matches("^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$", email)){
             System.out.println("valid");
+            return true;
         }
         else {
             System.out.println("Please enter valid email address");
+            return false;
         }
     }
 
-    private static void nameValidation(String name){
+    public static boolean nameValidation(String name){
         if(Pattern.matches("[A-Z][a-z]{3,}", name)){
             System.out.println("valid");
+            return true;
         }else{
             System.out.println("Please enter first letter capital ");
+            return false;
         }
     }
 

@@ -1,6 +1,7 @@
 package com.userRegistration;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
@@ -43,7 +44,12 @@ public class UserRegistration {
     }
 
     public static boolean emailValidation(String email) {
-        if(Pattern.matches("^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$", email)){
+//        String regx = "^abc[a-zA-Z0-9.+-]*@[a-z]*[.][a-z]{2,5}[.,a-z]{0,5}";
+//        Pattern pattern = Pattern.compile(regx);
+//        Matcher matcher = pattern.matcher(email);
+//        return matcher.matches();
+        if(Pattern.matches("^abc[a-zA-Z0-9.+-]*@[a-z]*[.][a-z]{2,5}[.,a-z]{0,5}", email)){
+
             System.out.println("valid");
             return true;
         }

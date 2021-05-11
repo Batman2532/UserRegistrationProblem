@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
     private static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UserRegistrationException {
         while(true) {
             System.out.println("Welcome to User Registration");
             System.out.println("Enter your First name");
@@ -23,50 +23,41 @@ public class UserRegistration {
         }
     }
 
-    public static boolean passwordValidation(String password) {
+    public static boolean passwordValidation(String password) throws UserRegistrationException {
         if(Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-d+=()])(?=\\S+$).{8,20}$",password)){
             System.out.println("valid");
             return true;
         }else {
-            System.out.println("Entered password is invalid");
-            return false;
+            throw new UserRegistrationException("Enter valid password");
         }
     }
 
-    public static boolean mobileNumberValidation(String mobileNumber) {
+    public static boolean mobileNumberValidation(String mobileNumber) throws UserRegistrationException {
         if(Pattern.matches("^[1-9]{1,3}[ ]{1}[1-9]{1}[0-9]{9}$", mobileNumber)){
             System.out.println("valid");
             return true;
         }else {
-            System.out.println("please enter a valid number");
-            return false;
+            throw new UserRegistrationException("Enter valid phone number");
         }
     }
 
-    public static boolean emailValidation(String email) {
-//        String regx = "^abc[a-zA-Z0-9.+-]*@[a-z]*[.][a-z]{2,5}[.,a-z]{0,5}";
-//        Pattern pattern = Pattern.compile(regx);
-//        Matcher matcher = pattern.matcher(email);
-//        return matcher.matches();
+    public static boolean emailValidation(String email) throws UserRegistrationException {
         if(Pattern.matches("^abc[a-zA-Z0-9.+-]*@[a-z]*[.][a-z]{2,5}[.,a-z]{0,5}", email)){
-
             System.out.println("valid");
             return true;
-        }
-        else {
-            System.out.println("Please enter valid email address");
-            return false;
+        }else {
+            throw new UserRegistrationException("Enter valid email");
         }
     }
 
-    public static boolean nameValidation(String name){
-        if(Pattern.matches("[A-Z][a-z]{3,}", name)){
-            System.out.println("valid");
-            return true;
-        }else{
-            System.out.println("Please enter first letter capital ");
-            return false;
-        }
+    public static boolean nameValidation(String name) throws UserRegistrationException{
+            if (Pattern.matches("[A-Z][a-z]{3,}", name)) {
+                System.out.println("valid");
+                return true;
+            }else {
+                throw new UserRegistrationException("Enter valid name");
+            }
     }
-
 }
+
+

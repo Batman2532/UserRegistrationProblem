@@ -53,9 +53,9 @@ public class ParameterizedValidation {
         });
     }
         @Test
-        public void checkEmailValidOrNot() {
+        public void checkEmailValidOrNot() throws UserRegistrationException {
             System.out.println("thia is expected result"+ this.expectedResult);
-//            Assertions.assertEquals(this.expectedResult, userRegistration.emailValidation(this.email));
+            Assertions.assertEquals(this.expectedResult, userRegistration.emailValidation(this.email));
         }
 
 }
